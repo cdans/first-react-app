@@ -23,17 +23,28 @@ class Footer extends Component {
     render() {
         return (
             <React.Fragment>
-                <h2 onClick={this.props.myAlert}>
-                    {this.props.trademark}
-                </h2>
-                <input
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.changed}
-                />
+                {this.state.age === 23 ? (
+                    <React.Fragment>
+                        <h2 onClick={this.props.myAlert}>
+                            {this.props.trademark}
+                        </h2>
+                        <input
+                            type="text"
+                            value={this.state.name}
+                            onChange={this.changed}
+                        />
+                    </React.Fragment>
+                ) : <React.Fragment>
+                    <h2>You cant see this Footer</h2>
+                    <h2>You have to login</h2>
+                </React.Fragment>}
             </React.Fragment>
         )
     }
 }
 
-export {Footer};
+export {
+    Footer
+}
+
+    ;
