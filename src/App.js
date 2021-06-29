@@ -17,7 +17,7 @@ function App() {
             <p>main content</p>
             <Footer
                 trademark="page by Christoph"
-                myAlert={createALert()}
+                myAlert={createALert}
             ></Footer>
         </div>
     );
