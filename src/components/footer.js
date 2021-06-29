@@ -8,21 +8,30 @@ class Footer extends Component {
     }
 
     componentDidMount() {
-        this.setState({name: "MyName"})
+        this.setState({name: "MyName"});
     }
 
     createALert() {
-        alert("clicked")
+        alert("clicked");
     }
 
     changed = (event) => {
-        console.log("changed", event.target.value)
-        this.setState({name: event.target.value})
+        console.log("changed", event.target.value);
+        this.setState({name: event.target.value});
     }
 
     render() {
+        const animals = ['cat', 'dog', 'horse'];
+
         return (
             <React.Fragment>
+                {animals.map(animal => {
+                    return (
+                        <div key={animal}>
+                            <p>{animal}</p>
+                        </div>
+                    );
+                })}
                 {this.state.age === 23 ? (
                     <React.Fragment>
                         <h2 onClick={this.props.myAlert}>
@@ -37,14 +46,12 @@ class Footer extends Component {
                 ) : <React.Fragment>
                     <h2>You cant see this Footer</h2>
                     <h2>You have to login</h2>
-                </React.Fragment>}
+                </React.Fragment>
+                }
             </React.Fragment>
-        )
+        );
     }
 }
 
-export {
-    Footer
-}
+export {Footer};
 
-    ;
