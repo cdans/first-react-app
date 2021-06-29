@@ -3,8 +3,12 @@ import React, {Component} from "react";
 class Footer extends Component {
 
     state = {
-        name: 'Christoph',
+        name: '',
         age: 23,
+    }
+
+    componentDidMount() {
+        this.setState({name: "MyName"})
     }
 
     createALert() {
