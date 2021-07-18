@@ -7,14 +7,23 @@ import {Footer} from "./components/footer";
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route} from "react-router-dom";
 
+const context = React.createContext();
+export const CtxConsumer = context.Consumer
+// const ctxProvider = context.Provider
+
+const animals = ['snake', 'elephant', 'lion', 'tiger'];
+
+
 const routing = (
     <BrowserRouter>
-        <div>
-            <Route exact path="/" component={App}></Route>
-            <Route path="/header" component={Header}></Route>
-            <Route path="/footer" component={Footer}></Route>
+        <context.Provider value={{animals: animals}}>
+            <div>
+                <Route exact path="/" component={App}></Route>
+                <Route path="/header" component={Header}></Route>
+                <Route path="/footer" component={Footer}></Route>
 
-        </div>
+            </div>
+        </context.Provider>
     </BrowserRouter>
 );
 
